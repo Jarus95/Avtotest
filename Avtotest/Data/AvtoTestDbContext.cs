@@ -1,5 +1,4 @@
-﻿using Avtotest.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Avtotest.Data
@@ -11,8 +10,5 @@ namespace Avtotest.Data
         {
             
         }
-        public DbSet<Questions> Questions { get; set; }
-        
-
     }
 }
