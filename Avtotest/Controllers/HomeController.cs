@@ -23,8 +23,8 @@ namespace Avtotest.Controllers
 
         public IActionResult Index()
         {
-            JsonRepostiory json = new JsonRepostiory(dbContext);
-            ViewBag.QuestionsCount = json.GetQuestionsCount();
+            JsonRepostiory json = new JsonRepostiory();
+            ViewBag.QuestionsCount = json.GetAllQuestionsCount();
             return View();
         }
 

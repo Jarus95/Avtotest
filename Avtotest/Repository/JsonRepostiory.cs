@@ -6,14 +6,13 @@ using Newtonsoft.Json;
 namespace Avtotest.Repository
 {
     public class JsonRepostiory
-    {
-        public AvtoTestDbContext dbContext;
+    {      
+        public int QuestionCountOnTicket { get; set; } = 10;
        
         string path = "JsonData/uzlotin.json";
 
-        public JsonRepostiory(AvtoTestDbContext dbContext)
+        public JsonRepostiory()
         {
-            this.dbContext = dbContext;
             DeserializeFromJson();
         }
 
@@ -24,7 +23,11 @@ namespace Avtotest.Repository
             StaticValues.questions = JsonConvert.DeserializeObject<List<QuestionsToJson>>(json);
         }
 
-        public int GetQuestionsCount()
+        public int GetTicketCount()
+        {
+            return StaticValues.questions.Count() / QuestionCountOnTicket;
+        }
+        public int GetAllQuestionsCount()
         {
             return StaticValues.questions.Count();
         }
